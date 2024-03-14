@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Course Requirements on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/tags/course-requirements/</link>
+    <description>Recent content in Course Requirements on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 27 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/tags/course-requirements/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virtual Machines For Ethical Hacking</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/</guid>
+      <description>This is my first online training course, aimed at those looking to get started with virtualisation, and Linux fundamentals. The course is designed to prepare you to take further courses in ethical hacking and penetration testing.&#xA;What you&amp;rsquo;ll learn How to set up new virtual machines using VirtualBox. How to install Debian to a virtual machine. About the concept of the root user, and the sudo command. How to install VirtualBox Guest Additions.</description>
+    </item>
+  </channel>
+</rss>

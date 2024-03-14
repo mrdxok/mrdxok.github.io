@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="James McAlonan" />
+<meta name="description" content="A blog about ethical hacking, penetration testing and training." />
+<meta name="keywords" content="blog, tech, ethical, hacking, training" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.123.8">
+
+<link rel="canonical" href="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.3_creating_your_first_vm/">
+<meta property="og:title" content="Lesson 1.3: Creating Your First Virtual Machine" />
+<meta property="og:description" content="In this video, I&rsquo;ll show you how to set up a virtual machine (VM) using VirtualBox:
+If you have problems getting your first VM to work, read the troubleshooting section below.
+Video Transcript I&rsquo;m now going to demonstrate how to create a new virtual machine in a virtual box.
+The first thing you need to do is click the Machine menu at the top of the screen, then choose New." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.3_creating_your_first_vm/" /><meta property="article:section" content="virtual_machines_for_ethical_hacking" />
+<meta property="article:published_time" content="2022-12-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-09T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Lesson 1.3: Creating Your First Virtual Machine"/>
+<meta name="twitter:description" content="In this video, I&rsquo;ll show you how to set up a virtual machine (VM) using VirtualBox:
+If you have problems getting your first VM to work, read the troubleshooting section below.
+Video Transcript I&rsquo;m now going to demonstrate how to create a new virtual machine in a virtual box.
+The first thing you need to do is click the Machine menu at the top of the screen, then choose New."/>
+
+<meta itemprop="name" content="Lesson 1.3: Creating Your First Virtual Machine">
+<meta itemprop="description" content="In this video, I&rsquo;ll show you how to set up a virtual machine (VM) using VirtualBox:
+If you have problems getting your first VM to work, read the troubleshooting section below.
+Video Transcript I&rsquo;m now going to demonstrate how to create a new virtual machine in a virtual box.
+The first thing you need to do is click the Machine menu at the top of the screen, then choose New."><meta itemprop="datePublished" content="2022-12-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-12-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1377">
+<meta itemprop="keywords" content="VM,virtual machine,VirtualBox," />
+
+<link rel="stylesheet" href="https://jamesmcalonan.co.uk/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://jamesmcalonan.co.uk/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Lesson 1.3: Creating Your First Virtual Machine 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://jamesmcalonan.co.uk/">James McAlonan</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/"><div class="nav-item-title">Blog</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/"><div class="nav-item-title">Training</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/contact/"><div class="nav-item-title">Contact</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Lesson 1.3: Creating Your First Virtual Machine </h1>
+    <div class="content"> <p>In this video, I&rsquo;ll show you how to set up a virtual machine (VM) using VirtualBox:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/PErRXiOvL6o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>If you have problems getting your first VM to work, read the <a href="#troubleshooting">troubleshooting section below</a>.</p>
+<h2 id="video-transcript">Video Transcript</h2>
+<p>I&rsquo;m now going to demonstrate how to create a new virtual machine in a virtual box.</p>
+<p>The first thing you need to do is click the Machine menu at the top of the screen, then choose New.</p>
+<p>Then type in a name for your VM. The best names are descriptive, so let&rsquo;s go with Debian, since that is the name of the operating system that you will be installing to this VM.</p>
+<p>You can leave the machine folder as it is, this is where the virtual machine&rsquo;s files will be stored and you can see that virtual box has automatically changed the type and the version here based on what we typed in this box.</p>
+<p>When you&rsquo;re ready to proceed, click next.</p>
+<p>Now, this is important: Memory, the memory that you allocate to a VM must be available on your physical computer system.</p>
+<p>You can see here that if I want to, I can assign a large amount of RAM to this VM.</p>
+<p>You may not be able to do that if you don&rsquo;t have the same amount of RAM that I have, so just make sure that you choose something that is going to allow your host operating system (that is Windows 10 in my case), make sure you choose enough so that that can still operate.</p>
+<p>Now, I&rsquo;m going to go with one thousand and twenty four megabytes, one gigabyte.</p>
+<p>It&rsquo;s also the recommended memory size.</p>
+<p>If you&rsquo;ve got four gigabytes of RAM, then allocating a quarter of that to the virtual machine should be OK.</p>
+<p>Click next when you&rsquo;re ready.</p>
+<p>Oh, and you can change this afterwards if you get it wrong.</p>
+<p>It&rsquo;s easy to make the change later.</p>
+<p>We do want to create a virtual hard disk now, so I want you to click create.</p>
+<p>Leave this as the default VDI (VirtualBox) disk image.</p>
+<p>And choose dynamically allocated here.</p>
+<p>I want you to change the size of this virtual hard disk to 20 gigabytes.</p>
+<p>As with the RAM, the storage space that you allocate to this virtual machine must be available on your physical system.</p>
+<p>So, 20 gigabytes, click create.</p>
+<p>Now, this is a dynamically allocated virtual hard drive.</p>
+<p>So those 20 gigabytes won&rsquo;t be used all at once.</p>
+<p>They&rsquo;ll be used up as we install tools and software to this new Debian operating system.</p>
+<p>Now, the operating system isn&rsquo;t actually installed yet. If you click start&hellip;</p>
+<p>&hellip;then you will see that it&rsquo;s asking for a start-up disk.</p>
+<p>There&rsquo;s nothing that this VM can boot from just yet.</p>
+<p>So I&rsquo;m going to click cancel.</p>
+<p>And you can see that there&rsquo;s an error message that says &ldquo;No bootable medium found! System halted.&rdquo;</p>
+<p>We don&rsquo;t have anything installed to this VM just yet.</p>
+<p>I&rsquo;ll show you how to do that very soon.</p>
+<p>You can close the VM.</p>
+<p>You do not need to save the machine state.</p>
+<p>Just power off the machine.</p>
+<p>Click OK.</p>
+<p>Now, if when you start that virtual machine for the first time, you get a different type of error message or the virtual machine just simply won&rsquo;t start, then please check the troubleshooting guide that I have provided for this lecture.</p>
+<p>To install Debian, you will need to insert the image file that you downloaded earlier into this VM&rsquo;s virtual optical drive. To do that, open the VM&rsquo;s settings by clicking on settings here.</p>
+<p>Choose storage, and then where it says empty here, click over to the right, select this little icon here, select, choose a disk file and then select the image file that you downloaded.</p>
+<p>And while you&rsquo;ve got the settings open for this virtual machine, you can make some other changes, too.</p>
+<p>If you go to system, you can see that you can make changes to this VM&rsquo;s motherboard, processor and you can also change some acceleration settings too. If you do need to change the memory, you can do that under the motherboard tab.</p>
+<p>What I recommend here is that you increase the number of processors or processor cores available to your VM to two.</p>
+<p>I also recommend that you go to display and change the amount of video memory available to the maximum.</p>
+<p>That is, assuming you have enough spare memory on your physical machine.</p>
+<p>When you&rsquo;re finished making changes, click OK.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you&rsquo;re having problems with getting your first VM to work, use the following information to help you troubleshoot the problem.</p>
+<p>It is normal to be able to install VirtualBox, and create a virtual machine without any issues, only to find that when you start your first VM, it doesn&rsquo;t work. There are a number of reasons why a virtual machine might fail to start:</p>
+<ol>
+<li>Virtualisation is not enabled in your system&rsquo;s BIOS or UEFI settings.</li>
+<li>You have another hypervisor, such as Hyper-V or VMWare installed (but not necessarily running) on your system</li>
+<li>The Virtual Machine has not been set up correctly</li>
+<li>Your system is not capable of running virtual machines (this is unlikely if you have a modern PC)</li>
+</ol>
+<h3 id="1-virtualisation-is-not-enabled">1. Virtualisation Is Not Enabled</h3>
+<p>If virtualisation is not enabled in your system&rsquo;s BIOS or UEFI settings, then you must restart your physical computer, and boot into the BIOS or UEFI settings. How you do this depends on your
+computer, but there is often a message displayed at start-up, telling you to press a key on the
+keyboard, in order to interrupt normal start-up. Find out what key this is, and hold it down as
+your computer boots. Follow the on-screen prompts to access your BIOS or UEFI menu, and then
+locate the setting that enables or disables virtualisation. This setting&rsquo;s name and description will
+vary, so you&rsquo;ll need to either consult your system&rsquo;s documentation, do some online searching or
+figure it out on your own. Take care not to alter any other settings, as this could disrupt your
+computer&rsquo;s normal operation. Once you have enabled virtualisation, save changes, and reboot
+your system.</p>
+<h3 id="2-conflicting-hypervisors">2. Conflicting Hypervisor(s)</h3>
+<p>If you already have a hypervisor installed (besides VirtualBox) such as VMware or Hyper-V (which
+may be enabled automatically in Windows 10 or Windows 11 Professional) then this can stop VirtualBox working.</p>
+<h4 id="hyper-v">Hyper-V</h4>
+<p>You will need to turn off Hyper-V for VirtualBox to work reliably. You will be able keep any
+existing Hyper-V virtual machines that you have created.</p>
+<ol>
+<li>Press the Windows key on your keyboard</li>
+<li>Start typing Turn Windows features on or off</li>
+<li>When you see Turn Windows features on or off appear in the start menu, click it</li>
+<li>Scroll down the list of features until you see Hyper-V</li>
+<li>Make sure Hyper-V is unchecked (or unticked)</li>
+<li>Click OK</li>
+<li>You will probably be prompted to restart your computer</li>
+<li>After restarting, attempt to run a virtual machine in VirtualBox again</li>
+</ol>
+<h4 id="vmware">VMWare</h4>
+<p>It is possible that VMWare is stopping VirtualBox from running. VMWare is a program that you
+will have downloaded and installed — it is not a part of Windows 10.</p>
+<ul>
+<li>You should attempt to close all VMWare windows, and make sure it is not running in the background.</li>
+<li>VirtualBox should still work, even if you have VMware installed.</li>
+<li>If you do not need VMWare, but have it installed, then try uninstalling it. Make sure you keep any VMs that you&rsquo;ve created or imported.</li>
+</ul>
+<h3 id="3-virtual-machine-not-configured-correctly">3. Virtual Machine Not Configured Correctly</h3>
+<p>Check the video(s) again to make sure you completed all steps when creating your virtual machine. It is possible that the machine does not have a start-up disk inserted, or has some invalid settings. Usually, there will be a warning message if you try to make a change to the settings, that VirtualBox deems invalid.</p>
+<p>Make sure you have not moved any of your VM&rsquo;s files since making the VM.</p>
+<h3 id="4-system-not-capable-of-virtualisation">4. System Not Capable of Virtualisation</h3>
+<p>If you&rsquo;re using a very old PC, or a PC that does not have a modern AMD or Intel processor, then it may not be able to virtualise machines at all. You should check your system&rsquo;s BIOS settings, to see if you can find a setting that relates to virtualisation.</p>
+<hr>
+<p>The official VirtualBox troubleshooting documentation can be found at:</p>
+<ul>
+<li><a href="https://www.virtualbox.org/manual/ch12.html">https://www.virtualbox.org/manual/ch12.html</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="https://jamesmcalonan.co.uk/tags/vm">#VM</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://jamesmcalonan.co.uk/tags/virtual-machine">#virtual machine</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://jamesmcalonan.co.uk/tags/virtualbox">#VirtualBox</a>
+      </div>
+    
+  
+</div>
+
+    <div class="date"> 2022-12-09 </div>
+    
+    <hr>
+            
+<div class="categories">
+  
+  Published in:
+    
+      <div class="category">
+        <a href="https://jamesmcalonan.co.uk/categories/virtual-machines-for-ethical-hacking">Virtual Machines For Ethical Hacking</a>
+      </div>
+    
+  
+</div>
+
+            
+<div class="series">
+  
+</div>
+
+    
+  </div>
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://jamesmcalonan.co.uk/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright © 2020-2022 James McAlonan </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

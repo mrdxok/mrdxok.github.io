@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/categories/</link>
+    <description>Recent content in Categories on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Course</title>
+      <link>https://jamesmcalonan.co.uk/categories/course/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/course/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ethical Hacking</title>
+      <link>https://jamesmcalonan.co.uk/categories/ethical-hacking/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/ethical-hacking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Free</title>
+      <link>https://jamesmcalonan.co.uk/categories/free/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/free/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gohugo</title>
+      <link>https://jamesmcalonan.co.uk/categories/gohugo/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/gohugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://jamesmcalonan.co.uk/categories/hugo/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Penetration Testing</title>
+      <link>https://jamesmcalonan.co.uk/categories/penetration-testing/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/penetration-testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security Consulting</title>
+      <link>https://jamesmcalonan.co.uk/categories/security-consulting/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/security-consulting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Training</title>
+      <link>https://jamesmcalonan.co.uk/categories/training/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/training/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Videos</title>
+      <link>https://jamesmcalonan.co.uk/categories/videos/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/videos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtual Machines for Ethical Hacking</title>
+      <link>https://jamesmcalonan.co.uk/categories/virtual-machines-for-ethical-hacking/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/virtual-machines-for-ethical-hacking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>YouTube Video Ideas</title>
+      <link>https://jamesmcalonan.co.uk/categories/youtube-video-ideas/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/youtube-video-ideas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Training Courses</title>
+      <link>https://jamesmcalonan.co.uk/categories/training-courses/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/training-courses/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualisation</title>
+      <link>https://jamesmcalonan.co.uk/categories/virtualisation/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/categories/virtualisation/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

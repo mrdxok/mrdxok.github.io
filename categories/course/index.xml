@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Course on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/categories/course/</link>
+    <description>Recent content in Course on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/categories/course/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Penetration Testing 101: Free Training</title>
+      <link>https://jamesmcalonan.co.uk/posts/free_training/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/free_training/</guid>
+      <description>I made some training videos, to help people who are new to ethical hacking and penetration testing learn some basics. The course makes use of VirtualBox, which is freely available, to create virtual machines, which run inside your existing PC or laptop. This is a great way to learn and practise hacking; because you can do it safely, and without causing harm to real computer systems! It&amp;rsquo;s also perfectly legal!</description>
+    </item>
+    <item>
+      <title>Adding Featured Images to a Hugo Blog</title>
+      <link>https://jamesmcalonan.co.uk/posts/adding_featured_images_to_hugo/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/adding_featured_images_to_hugo/</guid>
+      <description>It took me ages to figure this out, but I&amp;rsquo;m happy now it&amp;rsquo;s done, even if the solution isn&amp;rsquo;t the most elegant. I wanted to display an image for each blog post summary on my home page — like a thumbnail or featured image or something.&#xA;I eventually came across page variables and file variables in the official Hugo documentation, and made changes to my site&amp;rsquo;s /layouts/_default/summary.html file. Here&amp;rsquo;s the part of that file that I changed:</description>
+    </item>
+  </channel>
+</rss>

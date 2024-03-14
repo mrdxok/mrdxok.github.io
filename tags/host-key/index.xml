@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Host Key on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/tags/host-key/</link>
+    <description>Recent content in Host Key on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/tags/host-key/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lesson 1.4: The Host Key</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.4_the_host_key/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.4_the_host_key/</guid>
+      <description>In this video, I&amp;rsquo;ll show you how to avoid getting stuck inside your newly created virtual machine (VM). It is essenetial that you know about, and understand how to use VirtualBox&amp;rsquo;s host key!&#xA;Video Transcript No transcript yet&amp;hellip; watch this space!</description>
+    </item>
+  </channel>
+</rss>

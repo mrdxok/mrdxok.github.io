@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/tags/debian/</link>
+    <description>Recent content in Debian on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lesson 1.5: Installing Debian to a Virtual Machine</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.5_installing_debian_to_a_vm/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.5_installing_debian_to_a_vm/</guid>
+      <description>Let&amp;rsquo;s install Debian!&#xA;Video Transcript No transcript yet&amp;hellip; watch this space!</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="James McAlonan" />
+<meta name="description" content="A blog about ethical hacking, penetration testing and training." />
+<meta name="keywords" content="blog, tech, ethical, hacking, training" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.123.8">
+
+<link rel="canonical" href="https://jamesmcalonan.co.uk/posts/using_a_raspberry_pi_as_a_router/">
+<meta property="og:title" content="Using Your Raspberry Pi as a Router" />
+<meta property="og:description" content="In this post, I will show you how the Raspberry Pi 4 (Model B) running Raspberry Pi OS (formerly Raspbian) can be configured as a router. This is something I&rsquo;ve thought about doing for a while, but there is limited up-to-date information on the subject, so I decided to do some research, and provide my findings here in an easily digestible format.
+Background The primary role I want my Pi router to serve, is forwarding traffic from its Ethernet port, to its wireless interface." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jamesmcalonan.co.uk/posts/using_a_raspberry_pi_as_a_router/" /><meta property="og:image" content="https://jamesmcalonan.co.uk/posts/using_a_raspberry_pi_as_a_router/featured_image.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-07-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-16T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://jamesmcalonan.co.uk/posts/using_a_raspberry_pi_as_a_router/featured_image.png" /><meta name="twitter:title" content="Using Your Raspberry Pi as a Router"/>
+<meta name="twitter:description" content="In this post, I will show you how the Raspberry Pi 4 (Model B) running Raspberry Pi OS (formerly Raspbian) can be configured as a router. This is something I&rsquo;ve thought about doing for a while, but there is limited up-to-date information on the subject, so I decided to do some research, and provide my findings here in an easily digestible format.
+Background The primary role I want my Pi router to serve, is forwarding traffic from its Ethernet port, to its wireless interface."/>
+
+<meta itemprop="name" content="Using Your Raspberry Pi as a Router">
+<meta itemprop="description" content="In this post, I will show you how the Raspberry Pi 4 (Model B) running Raspberry Pi OS (formerly Raspbian) can be configured as a router. This is something I&rsquo;ve thought about doing for a while, but there is limited up-to-date information on the subject, so I decided to do some research, and provide my findings here in an easily digestible format.
+Background The primary role I want my Pi router to serve, is forwarding traffic from its Ethernet port, to its wireless interface."><meta itemprop="datePublished" content="2020-07-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-07-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3669"><meta itemprop="image" content="https://jamesmcalonan.co.uk/posts/using_a_raspberry_pi_as_a_router/featured_image.png" />
+<meta itemprop="keywords" content="" />
+
+<link rel="stylesheet" href="https://jamesmcalonan.co.uk/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://jamesmcalonan.co.uk/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Using Your Raspberry Pi as a Router 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://jamesmcalonan.co.uk/">James McAlonan</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/"><div class="nav-item-title">Blog</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/"><div class="nav-item-title">Training</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/contact/"><div class="nav-item-title">Contact</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Using Your Raspberry Pi as a Router </h1>
+    <div class="content"> <p>In this post, I will show you how the Raspberry Pi 4 (Model B) running Raspberry Pi OS (formerly Raspbian) can be configured as a router. This is something I&rsquo;ve thought about doing for a while, but there is limited up-to-date information on the subject, so I decided to do some research, and provide my findings here in an easily digestible format.</p>
+<h2 id="background">Background</h2>
+<p>The primary role I want my Pi router to serve, is forwarding traffic from its Ethernet port, to its wireless interface. My PC (a Windows 10 laptop) will plug-in (via a network switch) to the Pi&rsquo;s ethernet port, and the Pi will access the Internet via my home router using Wi-Fi. My laptop will be able to share this Internet connection through network address translation (NAT), a standard feature of any home router.</p>
+<p>I imagine this is <em>not</em> the way in which most people use their router. If you want to use your Pi as a <em>wireless</em> router, and allow devices to connect to it using Wi-Fi, you&rsquo;ll need to make some changes to the steps I outline in this article.</p>
+<p>Something else that&rsquo;s important to me, is that the Pi router connects to a VPN, and shares that connection too. This is something I&rsquo;ll write up in a future post.</p>
+<p>Figure 1 shows my Raspberry Pi 4 (in a <a href="https://thepihut.com/products/flirc-raspberry-pi-4-case">Flirc</a> case) sitting on top of a 5-port Linksys LGS105 network switch (<a href="https://www.linksys.com/gb/p/P-LGS105/">https://www.linksys.com/gb/p/P-LGS105/</a>). You could do away with the switch and connect your Pi directly to your PC via an ethernet cable. The cable that goes off to the right is connected to my PC.</p>
+<p><img src="photo_raspbery_pi_and_switch.jpg" alt="Figure 1: An encased Raspberry Pi 4 connected to a network switch"></p>
+<h2 id="requirements">Requirements</h2>
+<p>The steps outlined in this tutorial were tested with the following entities, some of which are required, and some of which could be omitted (or altered) depending on your individual needs:</p>
+<ul>
+<li><a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">A Raspberry Pi 4 Model B (4GB)</a></li>
+<li>A fresh install of <a href="https://www.raspberrypi.org/downloads/">Raspberry Pi OS</a> (formerly known as Raspbian)</li>
+<li>A network switch</li>
+<li>2 Ethernet cables</li>
+<li>An existing Wi-Fi router with an Internet connection</li>
+<li>A Windows 10 PC (desktop or laptop)</li>
+</ul>
+<h2 id="check-your-internet-connection">Check Your Internet Connection</h2>
+<p>To begin with, I will assume that you&rsquo;re using your Pi&rsquo;s desktop interface. If you&rsquo;re comfortable with the command line (perhaps you don&rsquo;t even have the desktop enabled) then these initial steps should not be difficult for you to replicate using the command line.</p>
+<p>Make sure your Raspberry Pi can access the Internet using its internal wireless interface. An easy way to test this is by opening the web browser, and making sure you can browse your usual sites. Ensure you&rsquo;re connected to your home Wi-Fi, and that your <em>not</em> using Ethernet for your Internet connection. The Ethernet port will be used by your PC later on.</p>
+<h2 id="configure-static-ip-addresses">Configure Static IP Addresses</h2>
+<p>Your Pi has two network interfaces, one of which is wireless, called wlan0, and one of which is wired, called eth0. I advise that you set static IP addresses for both. You can do this from the Pi&rsquo;s desktop view by right clicking on the Wi-Fi icon in the top right of the screen (to the left of the clock and sound icons). After right-clicking, select Wireless &amp; Wired Network Settings from the context menu, as shown in figure 2.</p>
+<p><img src="network_settings_cropped.PNG" alt="Figure 2: Select Wireless &amp; Wired Network Settings"></p>
+<p>A dialogue box for managing network interfaces will appear — see figure 3. Choose eth0 from the right drop-down box (leave the first as interface). Un-check the <em>Automatically configure empty options</em> box. You can disable IPv6 too, which I like to do to keep things simple. Provide an IPv4 address in the box. If you&rsquo;re not sure what to use, 192.168.120.49 will do. This is the address that your PC will use to connect to the Pi once plugged in with an Ethernet cable. Make a note of this IP address. This interface (eth0) will not be used by the Pi to connect to the internet, which is why you should <em>not</em> supply anything to the Router, DNS Servers or DNS Search boxes.</p>
+<p><img src="eth0_gui.PNG" alt="Figure 3: eth0 Preferences"></p>
+<p>Now that you&rsquo;ve set a static IP for eth0, you should review the settings for wlan0, by selecting wlan0 from the right drop-down box.</p>
+<hr>
+<p><strong>Warning:</strong> If you&rsquo;re not exactly sure what you&rsquo;re doing here, you should leave these settings as they are. This includes leaving the <em>Automatically configure empty options</em> box selected.</p>
+<hr>
+<p>Figure 4 shows my settings, but these are unlikely to work for you, with the exception of DNS Servers. I like to use Quad9 (<a href="https://www.quad9.net/">https://www.quad9.net/</a>) as my DNS provider.</p>
+<p><img src="wlan0_gui.PNG" alt="Figure 4: wlan0 Preferences"></p>
+<p>You do not need to test your settings just yet; I&rsquo;ll show you how to do that shortly.</p>
+<h2 id="enable-ssh-and-vnc">Enable SSH and VNC</h2>
+<p>If you haven&rsquo;t already, enable SSH and VNC on your Pi by navigating to the Start menu, then choosing Preferences, and then Raspberry Pi Configuration, as shown in figure 5.</p>
+<p><img src="raspberry_pi_configuration.PNG" alt="Figure 5: Select Raspberry Pi Configuration"></p>
+<p>Choose the Interfaces tab, shown in figure 6, and make sure you have SSH and VNC selected. These services will allow you to connect to your Pi, and control it from your PC. You may already be doing this (perhaps you noticed from the screenshots that I am).</p>
+<p><img src="interfaces.PNG" alt="Figure 6: Raspberry Pi Configuration — Interfaces"></p>
+<p>No further configuration is required for these services to work but at some point I advise you make changes to your Pi&rsquo;s <code>/etc/ssh/sshd_config</code> file in order to improve security. I <em>did</em> make some changes, whilst putting this tutorial together, but then undid them as it caused connection issues.</p>
+<p>Even if you do not make changes to your SSH daemon&rsquo;s configuration, you can mitigate some of the risks involved with running SSH and VNC, by using a firewall. I&rsquo;ll introduce you to a firewall later on.</p>
+<h2 id="connect-via-ethernet-cable">Connect via Ethernet Cable</h2>
+<p>If you haven&rsquo;t already, connect your Pi to your PC either directly with an Ethernet cable, or via a network switch with a couple of Ethernet cables. The latter is my preference, and what I&rsquo;m assuming you&rsquo;ve done.</p>
+<p>From now on, you will control your Pi via SSH and VNC over this wired Ethernet connection. VNC is not strictly necessary, but I like to have a couple of options for connecting and troubleshooting.</p>
+<hr>
+<p>Note: If you are using VNC to access your Raspberry Pi, rather than SSH, you may encounter a particularly unhelpful error message at some point duing your adventures, &ldquo;Cannot currently show the desktop&rdquo;. If this happens to you, try running <code>raspi-config</code> from the command line and changing your Pi&rsquo;s screen resoulation (it&rsquo;s under advanced options). Running out of storage space on your Pi&rsquo;s SD card can also cause this problem!</p>
+<hr>
+<p>When you connect your Windows 10 PC with an Ethernet cable you should see a new icon appear on the task bar, in the bottom-right of your screen (to the left of the clock). I recommend temporarily disabling your PC&rsquo;s Wi-Fi connection, assuming this is how you get your Internet, as this will make it clear you&rsquo;ve achieved a <em>wired</em> connection through your Pi (when you get to that point). Just make sure you can still access this article before disconnecting!</p>
+<p>Assuming you&rsquo;re using Windows 10 on your PC, you can connect to your Pi with SSH by opening a command prompt (<code>cmd</code>) and typing the following command, where <!-- raw HTML omitted --> is the IP address of your Raspberry Pi&rsquo;s wired (<em>not</em> wireless) network interface:</p>
+<pre tabindex="0"><code>ssh pi@&lt;IPAddress&gt;
+</code></pre><p>Note: If your Windows 10 PC does not recognise this ssh command, then its probably not installed. Use the windows key to bring up the start menu, and starting typing <code>optional features</code>. Click <em>Manage optional features</em> and then choose <em>Add a feature</em>. Make sure that you have OpenSSH Client installed (your Pi is the server in this instance).</p>
+<p>In my case, the command, the prompt that follows, and my login output looks like the following (just enter your usual password — for the pi user — when prompted).</p>
+<pre tabindex="0"><code>C:\Users\Jim&gt;ssh pi@192.168.120.49
+pi@192.168.120.49&#39;s password:
+Linux raspberrypi 4.19.118-v7l+ #1311 SMP Mon Apr 27 14:26:42 BST 2020 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Jul 15 08:52:26 2020 from 192.168.120.139
+pi@raspberrypi:~ $
+</code></pre><h2 id="test-your-internet-connection-again">Test Your Internet Connection, Again</h2>
+<p>Once you&rsquo;re logged in to your Pi using SSH, over a wired connection, check to see if your Raspberry Pi can still access the Internet using its Wi-Fi connection — wlan0. There&rsquo;s a good chance it will no longer be able to do so!</p>
+<p>This inability to access the Internet may have come about because eth0 is now taking priority over wlan0. In other words, your Pi is attempting to access the Internet over the wire that&rsquo;s now plugged into it. Using the <code>route</code> command will help to show what&rsquo;s going on:</p>
+<pre tabindex="0"><code>pi@raspberrypi:~ $ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.120.0   0.0.0.0         255.255.255.0   U     200    0        0 eth0
+</code></pre><h2 id="routing">Routing</h2>
+<p>Your Kernel IP routing table may look something like the previous output. There is only one route in this table, and that route does not provide Internet access. You want your routing table to look like the following output, which I&rsquo;ll show you how to achieve shortly:</p>
+<pre tabindex="0"><code>pi@raspberrypi:~ $ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         192.168.1.254   0.0.0.0         UG    100    0        0 wlan0
+192.168.1.0     0.0.0.0         255.255.255.0   U     100    0        0 wlan0
+192.168.120.0   0.0.0.0         255.255.255.0   U     200    0        0 eth0
+</code></pre><p>Notice the top entry or line, beginning with the word default. This default route has a Gateway value of 192.168.1.254 — the IP address of <em>my</em> home router. The last column (Iface) of the top line shows wlan0. This means that my wireless interface is utilised for this default route. If you&rsquo;re routing table shows only eth0, or wlan0 is not being using for the default route with a valid Gateway, then your Internet will not work. I&rsquo;ll address this routing issue next.</p>
+<h2 id="editing-network-interfaces">Editing Network Interfaces</h2>
+<p>Enter the command <code>sudo nano /etc/dhcpcd.conf</code> to open the /etc/dhcpcd.conf file with super-user privileges, using the nano text editor. Do <em>not</em> be tempted to edit /etc/network/interfaces, which historically was the file used for managing network interfaces (the name certainly checks out, but making changes here could cause problems). Scroll down to the bottom of /etc/dhcpcd.conf. Any changes that you made with the Pi&rsquo;s GUI-based network manager earlier will be visible here — at the end this file. I will briefly explain what each of the key elements in the text below mean, so that you can edit your own file to your specifications.</p>
+<pre tabindex="0"><code>auto wlan0
+interface wlan0
+static ip_address=192.168.1.150
+static routers=192.168.1.254
+static domain_name_servers=9.9.9.9
+static domain_search=
+noipv6
+metric 100
+
+auto eth0
+interface eth0
+static ip_address=192.168.120.49
+static routers=
+static domain_name_servers=
+static domain_search=
+noipv6
+metric 200
+</code></pre><p>The first block of text relates to your Pi&rsquo;s wireless device, and the second block relates to the wired ethernet interface. Here&rsquo;s what the keywords mean:</p>
+<ul>
+<li>auto — bring the interface up automatically.</li>
+<li>wlan0 /eth0 — the names of the wireless and wired interfaces respectively.</li>
+<li>interface — defines the start of a list of settings for the given interface.</li>
+<li>static — use to define a static IP address. You may not want to do this for wlan0.</li>
+<li>noipv6 — disable IPv6.</li>
+<li>metric — defines the priority of the interface. Lower number means higher priority.</li>
+</ul>
+<p>Make sure you add a metric line to each interface. By adding <code>metric 100</code> to wlan0, and a higher number, <code>metric 200</code> for example to eth0, you tell the system that wlan0 should take priority over eth1. This is what you want.</p>
+<p>You can probably leave whatever options are already resent for wlan0, and simply add the metric line.</p>
+<h2 id="power-management-issues">Power Management Issues</h2>
+<p>Another problem that can occur with the Raspberry Pi 4, is that the wireless network interface just stops working. This is likely due to a power saving feature, designed to turn off Wi-Fi when it is not in use. I recommend disabling that feature. The best way I&rsquo;ve found to do that so far is by running a script at system start-up. Before you do that, run <code>iwconfig</code> (a tool designed for managing wireless interfaces) which should present output similar to the following:</p>
+<pre tabindex="0"><code>eth0      no wireless extensions.
+
+wlan0     IEEE 802.11  ESSID:&#34;PLUSNET-76CN&#34;
+          Mode:Managed  Frequency:2.462 GHz  Access Point: D0:57:94:BA:3E:E0
+          Bit Rate=65 Mb/s   Tx-Power=31 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=64/70  Signal level=-46 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+lo        no wireless extensions.
+</code></pre><p>Notice the Power Management:on line. You want to turn it off. You can do that temporarily using <code>sudo iwconfig wlan0 power off</code> but the change will not persist after reboot. To make a startup script, edit the /etc/rc.local file. You will need to use <code>sudo nano /etc/rc.local</code> since this file is owned by, and only accessible to the root user. You can comment out the existing code, and then add your own, as shown here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#e5e5e5">#!/bin/sh -e
+</span></span></span><span style="display:flex;"><span><span style="color:#e5e5e5"></span><span style="color:#0f0">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># rc.local</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># This script is executed at the end of each multiuser runlevel.</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># Make sure that the script will &#34;exit 0&#34; on success or any other</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># value on error.</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># In order to enable or disable this script just change the execution</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># bits.</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># By default this script does nothing.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># Print the IP address</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># _IP=$(hostname -I) || true</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># if [ &#34;$_IP&#34; ]; then</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#   printf &#34;My IP address is %s\n&#34; &#34;$_IP&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># exit 0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># Turn off wireless interface&#39;s power management:</span>
+</span></span><span style="display:flex;"><span>/sbin/iwconfig wlan0 power off
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exit <span style="color:#f60">0</span>
+</span></span></code></pre></div><p>Notice that the full path to iwconfig is used, and that the command is <em>not</em> preceded with sudo. Make sure that this /etc/rc.local file is executable, so that it can be automatically executed when the system boots. Do this with:</p>
+<pre tabindex="0"><code>sudo chmod +x /etc/rc.local
+</code></pre><h2 id="test-your-internet-connection-_again_">Test Your Internet Connection <em>Again</em></h2>
+<p>Use the command <code>sudo reboot</code> to restart your system. Use the <code>route</code> command to check to see if you have a more favourable routing table after the changes you&rsquo;ve made. Test your internet connection too — <code>ping google.co.uk</code> is simple test which will check DNS resolution and that you have a path to google.co.uk.</p>
+<pre tabindex="0"><code>pi@raspberrypi:~ $ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         192.168.1.254   0.0.0.0         UG    100    0        0 wlan0
+192.168.1.0     0.0.0.0         255.255.255.0   U     100    0        0 wlan0
+192.168.120.0   0.0.0.0         255.255.255.0   U     200    0        0 eth0
+</code></pre><p>You can manually alter routes, but this is something I wanted to avoid, and is not necessary if you&rsquo;ve followed the steps so far. If you cannot access the Internet with your Raspberry Pi at this point, over Wi-Fi, then you should retrace your steps, and make sure everything else — your home router for example — is working as expected. Make sure you have not inadvertently blocked access with a firewall, or misconfigured your interfaces — an easy mistake to make.</p>
+<p>The command <code>ip route get</code> is great for checking whether your routes are set up as you want them. For example, entering <code>ip route get 9.9.9.9</code> displays the following:</p>
+<pre tabindex="0"><code>9.9.9.9 via 192.168.1.254 dev wlan0 src 192.168.1.150 uid 1000
+    cache
+</code></pre><p>This shows that 9.9.9.9 is being accessed via 192.168.1.254 (the address of my home router) using the wlan0 device. If you run <code>ip route get 192.168.120.139</code> (replace that IP address with your PC&rsquo;s wired IP address), you should see that your eth0 interface is used instead.</p>
+<h2 id="setting-up-forwarding--nat-with-uncomplicated-firewall">Setting Up Forwarding &amp; NAT with Uncomplicated Firewall</h2>
+<p>Install Uncomplicated Firewall (ufw) with <code>sudo apt install ufw</code> (remember to run <code>sudo apt update</code> first). Ufw is a relatively straightforward way of managing a firewall, from the command line. It works by issuing <code>iptables</code> commands, but provides a more human-friendly syntax. It cannot do everything that is required to set up your Pi as a router, and some <code>iptables</code> commands will be needed, but I recommend using it.</p>
+<p>Because I&rsquo;m not using with IPv6, I disabled the option to support it with Ufw. You can do that by altering the following line in <code>/etc/default/ufw</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#0f0"># Set to yes to apply rules to support IPv6 (no means only IPv6 on loopback</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># accepted). You will need to &#39;disable&#39; and then &#39;enable&#39; the firewall for</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># the changes to take affect.</span>
+</span></span><span style="display:flex;"><span><span style="color:#eedd82">IPV6</span>=no
+</span></span></code></pre></div><p>To allow forwarding (your Pi router&rsquo;s raison d&rsquo;être) to take place, you must uncomment the <code>net/ipv4/ip_forward=1</code> line, in <code>/etc/ufw/sysctl.conf</code>, as shown here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#0f0"># Uncomment this to allow this host to route packets between interfaces</span>
+</span></span><span style="display:flex;"><span>net/ipv4/ip_forward=<span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#net/ipv6/conf/default/forwarding=1</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#net/ipv6/conf/all/forwarding=1</span>
+</span></span></code></pre></div><p>Now, add the following lines (starting with <code># NAT table rules</code>) to <code>/etc/ufw/before.rules</code>, just after the introductory comments:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#0f0">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># rules.before</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># Rules that should be run before the ufw command line added rules. Custom</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># rules should be added to one of these chains:</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#   ufw-before-input</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#   ufw-before-output</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#   ufw-before-forward</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># NAT table rules</span>
+</span></span><span style="display:flex;"><span>*nat
+</span></span><span style="display:flex;"><span>:POSTROUTING ACCEPT [0:0]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># Forward traffic through wlan0:</span>
+</span></span><span style="display:flex;"><span>-A POSTROUTING -s 192.168.120.0/24 -o wlan0 -j MASQUERADE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># Don&#39;t delete the &#39;COMMIT&#39; line or these nat table rules won&#39;t be processed</span>
+</span></span><span style="display:flex;"><span>COMMIT
+</span></span></code></pre></div><p>Make sure you do not delete or remove any of the other rules in this file. Here&rsquo;s a brief description of what the letters and strange words above mean. You can find out more by reading the iptables man page (<code>man iptables</code>).</p>
+<ul>
+<li><code>-A</code> append the rule the end of the selected chain, the POSTROUTING chain for example.</li>
+<li><code>-s</code> source address/subnet — make sure this reflects the IP address or subnet connecting your Pi to you and PC.</li>
+<li><code>-o</code> output interface</li>
+<li><code>-j</code> jump to another chain, MASQUERADE in this case</li>
+</ul>
+<p>The MASQUERADE chain is responsible for masquerading your PC&rsquo;s internal IP address (192.168.120.139) in my case, hiding it from the wireless network beyond the Pi router. The Pi will use its own 192.168.1.150 address and perform network address translation (NAT) just like any conventional router, to allow communication between your PC and your existing home network to take place. You&rsquo;ve created a new private network, behind the Pi router.</p>
+<p>Run the following Ufw command to allow a route in on your Pi&rsquo;s wired Ethernet device, and out on wlan0:</p>
+<pre tabindex="0"><code>sudo ufw route allow in on eth0 out on wlan0
+</code></pre><p>As you don&rsquo;t want to allow <em>all</em> routing, regardless of the source and destination, use the command below to prevent any routes that do not have a rule already:</p>
+<pre tabindex="0"><code>sudo ufw default deny routed
+</code></pre><p>Later, you can define more specific rules to allow only certain IP addresses or ports to be routed if you wish.</p>
+<h2 id="configure-your-windows-10-ethernet-adapter">Configure Your Windows 10 Ethernet Adapter</h2>
+<p>You should now attempt to access the Internet through the Ethernet cable attached to your PC. Your Pi will route packets where they need to go. If you haven&rsquo;t already disabled your PC&rsquo;s Wi-Fi Internet connection, now is a good time. Then, make sure your Ethernet adapter is configured to use your Pi as its default gateway. You&rsquo;ll need to make the changes manually. Run <code>ipconfig</code> from the command prompt (<code>cmd</code>) to check your settings:</p>
+<pre tabindex="0"><code>Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::586:8612:709d:5c0c%17
+   IPv4 Address. . . . . . . . . . . : 192.168.120.139
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.120.49
+</code></pre><p>Search for <code>Ethernet settings</code> in the Windows 10 start menu, and click it when it appears. Then, choose your Ethernet device from the list. Scroll down to IP settings, and click Edit to make changes.</p>
+<h2 id="backing-up-your-pi">Backing Up Your Pi</h2>
+<p>If you&rsquo;ve managed to get everything working at this point, congratulations — it&rsquo;s unlikely everything worked for you exactly as shown so far! I recommend backing up your Pi&rsquo;s SD card so that if (when) problems occur you can easily restore the whole system in one go. You could use Raspberry Pi OS&rsquo; built-in utility to this, or use the <code>dd</code> command to copy the disk image to a file on an <em>external</em> hard drive. The command you&rsquo;ll  need to use will look something like the following:</p>
+<pre tabindex="0"><code>sudo dd if=/dev/mmcblk0 of=/media/pi/&lt;ExternalHDD&gt;/sdcard.image
+</code></pre><h2 id="summary">Summary</h2>
+<p>You now have a Raspberry Pi working as a router, using NAT, and forwarding traffic from a private wired network, to the Internet using its wireless interface. Here&rsquo;s a reminder of the key steps:</p>
+<ol>
+<li>Check your Pi&rsquo;s Wi-Fi Internet connection</li>
+<li>Configure static IP addresses</li>
+<li>Enable SSH and VNC</li>
+<li>Connect to your Pi using an Ethernet cable</li>
+<li>Test Your Pi&rsquo;s Internet connection again</li>
+<li>Check your Pi&rsquo;s routing table</li>
+<li>Make further changes to your network interfaces</li>
+<li>Address wireless power management issues</li>
+<li>Test again!</li>
+<li>Set up forwarding and NAT with Ufw</li>
+<li>Configure your Windows 10 Ethernet adapter for Internet access</li>
+<li>Check you have Internet access via the Pi router</li>
+<li>Backup</li>
+</ol>
+<p>There are several further features I&rsquo;d like to add to my Pi router. In fact, I&rsquo;ve already added some further firewall rules using Ufw, and allowed my Pi to connect to a VPN, which it shares with my PC. I&rsquo;ll write articles for those.</p>
+<p>I&rsquo;d also like to implement (or re-implement since I&rsquo;ve done some of these before) the following, on my Pi router:</p>
+<ul>
+<li>Samba, for network storage (including backups)</li>
+<li>A web proxy, for faster load times of commonly accessed web resources</li>
+<li>DNS, for local DNS caching (using BIND)</li>
+</ul>
+<p>One thing that I&rsquo;m not particularly bothered about, but that which some may deem essential for a router, is a dynamic host configuration protocol (DHCP) server. Most routers have this, for automatically handing out IP addresses to clients when they connect. This is particularly useful if you&rsquo;re using your Pi as the main router in a particular setting.</p>
+<p>Another feature of most routers is a web interface, allowing easy management with a web browser. I suspect anyone that has made it this far, would not see that as important given what can be done with the command line.</p>
+<p>An important point is that this Pi router could easily use SSH as its only access mechanism, which if configured correctly, can bring huge security benefits over home routers (that are still relying on Telnet for command line access).</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+</div>
+
+    <div class="date"> 2020-07-16 </div>
+    
+  </div>
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://jamesmcalonan.co.uk/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright © 2020-2022 James McAlonan </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

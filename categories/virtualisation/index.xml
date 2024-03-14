@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtualisation on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/categories/virtualisation/</link>
+    <description>Recent content in Virtualisation on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/categories/virtualisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating Virtual Machines with Hyper-V and PowerShell</title>
+      <link>https://jamesmcalonan.co.uk/posts/creating_vms_hyper-v_powershell/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/creating_vms_hyper-v_powershell/</guid>
+      <description>If you want to learn how to hack, you&amp;rsquo;ll need some machines that you can legally hack and experiment with, without risk of doing harm. Rather than use physical machines, which most of us are unlikely to have lying around, you can use virtual machines. A virtual machine (VM) runs inside an existing operating system, such as Windows, and shares its resources. You could have a host OS of Windows 10, running several VMs, each using a chunk of the host OS&amp;rsquo;s physical memory, storage capacity and CPU time.</description>
+    </item>
+    <item>
+      <title>Downloading and Installing VirtualBox on Windows 10</title>
+      <link>https://jamesmcalonan.co.uk/posts/download_and_install_virtualbox_on_windows_10/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/download_and_install_virtualbox_on_windows_10/</guid>
+      <description>In this tutorial I will show you how to download and install the latest version of VirtualBox to your Windows 10 computer.&#xA;1. Download VirtualBox Point your web browser to https://www.virtualbox.org/wiki/Downloads and then click the Windows hosts link, as shown in figure 1.&#xA;Choose to save the .exe file, to the place where you normally save your downloads. The file&amp;rsquo;s name will be similar to VirtualBox-6.1.8-137981-Win.exe, and depends on the version number.</description>
+    </item>
+  </channel>
+</rss>

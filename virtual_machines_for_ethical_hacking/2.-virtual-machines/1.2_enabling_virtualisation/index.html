@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="James McAlonan" />
+<meta name="description" content="A blog about ethical hacking, penetration testing and training." />
+<meta name="keywords" content="blog, tech, ethical, hacking, training" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.123.8">
+
+<link rel="canonical" href="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.2_enabling_virtualisation/">
+<meta property="og:title" content="Lesson 1.2: Enabling Virtualisation" />
+<meta property="og:description" content="Your computer must have virtualization enabled for virtual machines to run on it. You can only enable virtualization by making changes to your system&rsquo;s UEFI, also known as BIOS, settings.
+If you&rsquo;ve already done that, you can skip this lecture.
+But if you&rsquo;re not sure what I&rsquo;m talking about right now, you need to keep watching. You&rsquo;ll need to restart your computer, then keep an eye out for which key you need to press to interrupt the normal startup process." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.2_enabling_virtualisation/" /><meta property="article:section" content="virtual_machines_for_ethical_hacking" />
+<meta property="article:published_time" content="2022-12-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-09T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Lesson 1.2: Enabling Virtualisation"/>
+<meta name="twitter:description" content="Your computer must have virtualization enabled for virtual machines to run on it. You can only enable virtualization by making changes to your system&rsquo;s UEFI, also known as BIOS, settings.
+If you&rsquo;ve already done that, you can skip this lecture.
+But if you&rsquo;re not sure what I&rsquo;m talking about right now, you need to keep watching. You&rsquo;ll need to restart your computer, then keep an eye out for which key you need to press to interrupt the normal startup process."/>
+
+<meta itemprop="name" content="Lesson 1.2: Enabling Virtualisation">
+<meta itemprop="description" content="Your computer must have virtualization enabled for virtual machines to run on it. You can only enable virtualization by making changes to your system&rsquo;s UEFI, also known as BIOS, settings.
+If you&rsquo;ve already done that, you can skip this lecture.
+But if you&rsquo;re not sure what I&rsquo;m talking about right now, you need to keep watching. You&rsquo;ll need to restart your computer, then keep an eye out for which key you need to press to interrupt the normal startup process."><meta itemprop="datePublished" content="2022-12-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-12-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="317">
+<meta itemprop="keywords" content="" />
+
+<link rel="stylesheet" href="https://jamesmcalonan.co.uk/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://jamesmcalonan.co.uk/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Lesson 1.2: Enabling Virtualisation 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://jamesmcalonan.co.uk/">James McAlonan</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/"><div class="nav-item-title">Blog</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/"><div class="nav-item-title">Training</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/about/"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://jamesmcalonan.co.uk/contact/"><div class="nav-item-title">Contact</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Lesson 1.2: Enabling Virtualisation </h1>
+    <div class="content"> <p>Your computer must have virtualization enabled for virtual machines to run on it. You can only enable virtualization by making changes to your system&rsquo;s UEFI, also known as BIOS, settings.</p>
+<p>If you&rsquo;ve already done that, you can skip this lecture.</p>
+<p>But if you&rsquo;re not sure what I&rsquo;m talking about right now, you need to keep watching. You&rsquo;ll need to restart your computer, then keep an eye out for which key you need to press to interrupt the normal startup process.</p>
+<p>A message will appear somewhere on your screen. On this HP laptop, it&rsquo;s down there in the bottom left. On my Lenovo laptop, I would press enter.</p>
+<p>But on this laptop, I need to press escape. You really don&rsquo;t get much warning and you may miss the opportunity the first time around, try again. I&rsquo;m holding the escape key down now before that message even appears.</p>
+<p>Now, your menu will probably look different to this.</p>
+<ul>
+<li>Choose the option to enter the BIOS or UEFI.</li>
+<li>You will then need to find the virtualization setting. On my Lenovo laptop,</li>
+<li>I know that setting is found under security, but on this HP laptop, it&rsquo;s under system configuration.</li>
+<li>The name of the setting varies.</li>
+<li>Here, it&rsquo;s called virtualization technology.</li>
+<li>But it could be called VT-x, AMD-v or Intel virtualization technology, to give you a few examples.</li>
+<li>Locate the setting and enable it.</li>
+</ul>
+<p>You may see two settings relating to virtualization.If that&rsquo;s the case, then just try enabling the first one. And later on, if you want, you can come back and enable the second one, if VirtualBox isn&rsquo;t working. Once you have enabled virtualization, you can quit, but make sure you save your settings.</p>
+<p>If you&rsquo;re not absolutely sure what you&rsquo;re doing, don&rsquo;t make any other changes here just in case you stop your computer from starting up normally. When you exit, your system will reboot and you&rsquo;re good to go.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+</div>
+
+    <div class="date"> 2022-12-09 </div>
+    
+    <hr>
+            
+<div class="categories">
+  
+  Published in:
+    
+      <div class="category">
+        <a href="https://jamesmcalonan.co.uk/categories/virtual-machines-for-ethical-hacking">Virtual Machines For Ethical Hacking</a>
+      </div>
+    
+  
+</div>
+
+            
+<div class="series">
+  
+</div>
+
+    
+  </div>
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://jamesmcalonan.co.uk/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright © 2020-2022 James McAlonan </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

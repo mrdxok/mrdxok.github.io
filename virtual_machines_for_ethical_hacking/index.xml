@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtual Machines For Ethical Hacking on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/</link>
+    <description>Recent content in Virtual Machines For Ethical Hacking on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lesson 1.1: Downloading Debian and VirtualBox</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.1_debian_and_virtualbox/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.1_debian_and_virtualbox/</guid>
+      <description>Welcome to the first module of the course, in which I&amp;rsquo;ll introduce you to the concept of virtual machines, and show you how to set one up.&#xA;In this first lesson, I&amp;rsquo;ll make sure you know where to get some essential software, and how to install VirtualBox.&#xA;Learning Objective You will find out where to download software, essential for taking this course, and how to install it to your computer.</description>
+    </item>
+    <item>
+      <title>Lesson 1.2: Enabling Virtualisation</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.2_enabling_virtualisation/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.2_enabling_virtualisation/</guid>
+      <description>Your computer must have virtualization enabled for virtual machines to run on it. You can only enable virtualization by making changes to your system&amp;rsquo;s UEFI, also known as BIOS, settings.&#xA;If you&amp;rsquo;ve already done that, you can skip this lecture.&#xA;But if you&amp;rsquo;re not sure what I&amp;rsquo;m talking about right now, you need to keep watching. You&amp;rsquo;ll need to restart your computer, then keep an eye out for which key you need to press to interrupt the normal startup process.</description>
+    </item>
+    <item>
+      <title>Lesson 1.3: Creating Your First Virtual Machine</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.3_creating_your_first_vm/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.3_creating_your_first_vm/</guid>
+      <description>In this video, I&amp;rsquo;ll show you how to set up a virtual machine (VM) using VirtualBox:&#xA;If you have problems getting your first VM to work, read the troubleshooting section below.&#xA;Video Transcript I&amp;rsquo;m now going to demonstrate how to create a new virtual machine in a virtual box.&#xA;The first thing you need to do is click the Machine menu at the top of the screen, then choose New.</description>
+    </item>
+    <item>
+      <title>Lesson 1.4: The Host Key</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.4_the_host_key/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.4_the_host_key/</guid>
+      <description>In this video, I&amp;rsquo;ll show you how to avoid getting stuck inside your newly created virtual machine (VM). It is essenetial that you know about, and understand how to use VirtualBox&amp;rsquo;s host key!&#xA;Video Transcript No transcript yet&amp;hellip; watch this space!</description>
+    </item>
+    <item>
+      <title>Lesson 1.5: Installing Debian to a Virtual Machine</title>
+      <link>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.5_installing_debian_to_a_vm/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/virtual_machines_for_ethical_hacking/2.-virtual-machines/1.5_installing_debian_to_a_vm/</guid>
+      <description>Let&amp;rsquo;s install Debian!&#xA;Video Transcript No transcript yet&amp;hellip; watch this space!</description>
+    </item>
+  </channel>
+</rss>

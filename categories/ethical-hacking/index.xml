@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ethical Hacking on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/categories/ethical-hacking/</link>
+    <description>Recent content in Ethical Hacking on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/categories/ethical-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Penetration Testing 101: Free Training</title>
+      <link>https://jamesmcalonan.co.uk/posts/free_training/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/free_training/</guid>
+      <description>I made some training videos, to help people who are new to ethical hacking and penetration testing learn some basics. The course makes use of VirtualBox, which is freely available, to create virtual machines, which run inside your existing PC or laptop. This is a great way to learn and practise hacking; because you can do it safely, and without causing harm to real computer systems! It&amp;rsquo;s also perfectly legal!</description>
+    </item>
+    <item>
+      <title>An Introduction to Hacking and Penetration Testing</title>
+      <link>https://jamesmcalonan.co.uk/posts/introduction/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/introduction/</guid>
+      <description>If you&amp;rsquo;re interested in becoming an ethical hacker, a penetration tester, or security consultant — or you simply want to learn more about these roles, then read on. This article takes a look at hacking in a computer security context, and how to get started in this field.&#xA;If you want learn some basics, check out my free training course.&#xA;What is a Hacker? Hackers get a a lot of bad press.</description>
+    </item>
+  </channel>
+</rss>

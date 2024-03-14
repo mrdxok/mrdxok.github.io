@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on James McAlonan</title>
+    <link>https://jamesmcalonan.co.uk/posts/</link>
+    <description>Recent content in Posts on James McAlonan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>Copyright © 2020-2022 James McAlonan</copyright>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jamesmcalonan.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Penetration Testing 101: Free Training</title>
+      <link>https://jamesmcalonan.co.uk/posts/free_training/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/free_training/</guid>
+      <description>I made some training videos, to help people who are new to ethical hacking and penetration testing learn some basics. The course makes use of VirtualBox, which is freely available, to create virtual machines, which run inside your existing PC or laptop. This is a great way to learn and practise hacking; because you can do it safely, and without causing harm to real computer systems! It&amp;rsquo;s also perfectly legal!</description>
+    </item>
+    <item>
+      <title>Adding Featured Images to a Hugo Blog</title>
+      <link>https://jamesmcalonan.co.uk/posts/adding_featured_images_to_hugo/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/adding_featured_images_to_hugo/</guid>
+      <description>It took me ages to figure this out, but I&amp;rsquo;m happy now it&amp;rsquo;s done, even if the solution isn&amp;rsquo;t the most elegant. I wanted to display an image for each blog post summary on my home page — like a thumbnail or featured image or something.&#xA;I eventually came across page variables and file variables in the official Hugo documentation, and made changes to my site&amp;rsquo;s /layouts/_default/summary.html file. Here&amp;rsquo;s the part of that file that I changed:</description>
+    </item>
+    <item>
+      <title>An Introduction to Hacking and Penetration Testing</title>
+      <link>https://jamesmcalonan.co.uk/posts/introduction/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/introduction/</guid>
+      <description>If you&amp;rsquo;re interested in becoming an ethical hacker, a penetration tester, or security consultant — or you simply want to learn more about these roles, then read on. This article takes a look at hacking in a computer security context, and how to get started in this field.&#xA;If you want learn some basics, check out my free training course.&#xA;What is a Hacker? Hackers get a a lot of bad press.</description>
+    </item>
+    <item>
+      <title>Artificial Intelligence in Games — Why Isn&#39;t It better?</title>
+      <link>https://jamesmcalonan.co.uk/posts/ai-in-games-why-is-it-not-better/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/ai-in-games-why-is-it-not-better/</guid>
+      <description>Disclaimer: I did very little research (if any) on this. You should consider the following, my opinion, and not a well-thought-out answer to the question.&#xA;With frequent new releases of huge games like Cyberpunk 2077 now commonplace, and with the computer games industry raking in huge profits, something you may be wondering is, why isn&amp;rsquo;t the artificial intelligence — the AI — in computer games, well, better? After all, is this not the age of machine learning and self-driving cars?</description>
+    </item>
+    <item>
+      <title>Site Updates</title>
+      <link>https://jamesmcalonan.co.uk/posts/site_updates/</link>
+      <pubDate>Fri, 27 Nov 2020 13:48:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/site_updates/</guid>
+      <description>I&amp;rsquo;ve spent most of the &amp;mdash;no, all day, recreating this site, with the help of Hugo1 &amp;mdash; not a person, but an open-source, static website builder. It&amp;rsquo;s taken me this long, because I&amp;rsquo;ve been learning how Hugo works, as I (Hu)go. I like Hugo now. Thanks Hugo.&#xA;Every link on the site should now take you to a page, that actually has something on it. I&amp;rsquo;ve re-organised my content as follows:</description>
+    </item>
+    <item>
+      <title>Markdown Cheat Sheet</title>
+      <link>https://jamesmcalonan.co.uk/posts/markdown_cheat_sheet/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/markdown_cheat_sheet/</guid>
+      <description>The majority of the pages that make up this website are written in markdown (a lightweight markup language created by John Gruber) before being converted to hypertext markup language (HTML) using Hugo (https://gohugo.io).&#xA;I used to use Pandoc, a command-line tool designed to convert almost any document type, from or to any other type. For example, HTML to Word (.docx), spreadsheets to portable document format (PDF), or in my case, markdown to HTML.</description>
+    </item>
+    <item>
+      <title>Using Your Raspberry Pi as a Router</title>
+      <link>https://jamesmcalonan.co.uk/posts/using_a_raspberry_pi_as_a_router/</link>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/using_a_raspberry_pi_as_a_router/</guid>
+      <description>In this post, I will show you how the Raspberry Pi 4 (Model B) running Raspberry Pi OS (formerly Raspbian) can be configured as a router. This is something I&amp;rsquo;ve thought about doing for a while, but there is limited up-to-date information on the subject, so I decided to do some research, and provide my findings here in an easily digestible format.&#xA;Background The primary role I want my Pi router to serve, is forwarding traffic from its Ethernet port, to its wireless interface.</description>
+    </item>
+    <item>
+      <title>Creating Virtual Machines with Hyper-V and PowerShell</title>
+      <link>https://jamesmcalonan.co.uk/posts/creating_vms_hyper-v_powershell/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/creating_vms_hyper-v_powershell/</guid>
+      <description>If you want to learn how to hack, you&amp;rsquo;ll need some machines that you can legally hack and experiment with, without risk of doing harm. Rather than use physical machines, which most of us are unlikely to have lying around, you can use virtual machines. A virtual machine (VM) runs inside an existing operating system, such as Windows, and shares its resources. You could have a host OS of Windows 10, running several VMs, each using a chunk of the host OS&amp;rsquo;s physical memory, storage capacity and CPU time.</description>
+    </item>
+    <item>
+      <title>Downloading and Installing VirtualBox on Windows 10</title>
+      <link>https://jamesmcalonan.co.uk/posts/download_and_install_virtualbox_on_windows_10/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/download_and_install_virtualbox_on_windows_10/</guid>
+      <description>In this tutorial I will show you how to download and install the latest version of VirtualBox to your Windows 10 computer.&#xA;1. Download VirtualBox Point your web browser to https://www.virtualbox.org/wiki/Downloads and then click the Windows hosts link, as shown in figure 1.&#xA;Choose to save the .exe file, to the place where you normally save your downloads. The file&amp;rsquo;s name will be similar to VirtualBox-6.1.8-137981-Win.exe, and depends on the version number.</description>
+    </item>
+    <item>
+      <title>Taking Notes During A Penetration Test</title>
+      <link>https://jamesmcalonan.co.uk/posts/taking_notes/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://jamesmcalonan.co.uk/posts/taking_notes/</guid>
+      <description>This piece is all about taking detailed notes during a penetration test, and how to organize those notes. As well as the notes you write yourself, you&amp;rsquo;ll need to organize the vast amount of output generated by tools. One way of keeping everything organized, is to use some software for that exact purpose. But, I want to look at creating some custom bash scripts instead.&#xA;Rather than store information in a database, I&amp;rsquo;m going to use good-old flat files organised into directories.</description>
+    </item>
+  </channel>
+</rss>

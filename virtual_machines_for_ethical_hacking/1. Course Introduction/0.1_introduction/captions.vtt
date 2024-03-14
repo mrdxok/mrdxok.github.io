@@ -1,0 +1,102 @@
+
+WEBVTT
+
+0
+00:00.330 --> 00:05.190
+Hello and welcome to my training course, Virtual Machines for Ethical Hacking.
+
+1
+00:05.520 --> 00:08.380
+My name is James McAlonan, but you can call me Jim.
+
+2
+00:08.730 --> 00:09.990
+I will be your teacher.
+
+3
+00:10.440 --> 00:15.540
+This short course is aimed at those with little to no experience in hacking.
+
+4
+00:16.530 --> 00:20.940
+If you want to know how and where to get started, this course is for you.
+
+5
+00:22.090 --> 00:28.330
+I will show you how to set up a two virtual machines or VMs using VirtualBox, which is a piece of
+
+6
+00:28.330 --> 00:34.720
+software used for managing virtual machines and is free for you to download and use. These machines
+
+7
+00:34.720 --> 00:37.650
+will run inside your existing operating system.
+
+8
+00:37.990 --> 00:43.930
+And while VirtualBox does work on MacOS and Linux distributions, I'll be using Windows 10 for
+
+9
+00:43.930 --> 00:45.130
+demonstration purposes.
+
+10
+00:46.380 --> 00:51.270
+By the end of the course, you will have set up two virtual machines, one of which will be your hacking
+
+11
+00:51.270 --> 00:54.710
+toolkit and the other will be a target for hacking into.
+
+12
+00:55.470 --> 01:00.360
+While this course is aimed at beginners to hacking and virtual machines, you should already have some
+
+13
+01:00.360 --> 01:02.970
+knowledge of computers and computer networks.
+
+14
+01:04.050 --> 01:11.070
+In particular, you should know how a computer's CPU, RAM, storage and operating system work and how computers
+
+15
+01:11.070 --> 01:12.810
+communicate over a network.
+
+16
+01:13.080 --> 01:18.510
+Knowledge of the TCP/IP Protocol Suite or the Internet Protocol Suite will be beneficial.
+
+17
+01:19.350 --> 01:24.580
+I will introduce you to Debian, a popular and stable Linux distribution.
+
+18
+01:25.230 --> 01:30.750
+I'll introduce you to the command line and cover some fundamental concepts, including the root user, the
+
+19
+01:30.750 --> 01:33.630
+sudo command and basic firewall configuration.
+
+20
+01:34.530 --> 01:38.780
+You will need to download and install some software in order to complete this course.
+
+21
+01:38.970 --> 01:43.740
+So please make sure that you're comfortable installing software to your system and please do check the
+
+22
+01:43.740 --> 01:45.570
+system requirements before proceeding.
+
+23
+01:46.260 --> 01:50.500
+All the tools and software I demonstrate are free for you to obtain and use.
+
+24
+01:51.390 --> 01:53.610
+Welcome to the world of ethical hacking!
